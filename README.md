@@ -108,23 +108,31 @@ To get familiar with the project structure and its components, let's dive into a
 
 Now that you're familiar with the project structure, the next step is to refactor the tests to transform them into true micro-scale unit tests. This activity will be carried out in several stages, each focusing on a specific aspect of refactoring.
 
-### Stage 1: Isolate Tests from the Database
+Here are some suggested initial refactorings. You can apply them in any order
+
+### Idea 1: Factor Out the Database Methods
+
+- **Objective:** Improve the separation between the database interaction logic and the Flask route handlers.
+- **Action:** Add automated tests for methods `init_db` and `get_db_connection`. Move those methods to their own utilities file.
+- **Expected Outcome:** The Flask route handlers are better isolated from the `sqlite3` package.
+
+### Idea 2: Isolate Tests from the Database
 
 - **Objective:** Ensure that tests do not directly interact with the database.
 - **Action:** Introduce mocking for database interactions. Use a mocking framework to simulate database responses in `test_app.py`.
 - **Expected Outcome:** Tests should no longer depend on the actual database, and should run without requiring a live database connection.
 
-### Stage 2: Isolate Tests from JSON Formatting
-
-- **Objective:** Ensure that tests focus on business logic and data handling, rather than the specifics of JSON response formatting.
-- **Action:** Mock file system operations (like reading from or writing to files) in your tests.
-- **Expected Outcome:** Tests validate the correctness of data processing or business logic, independent of data format. Tests become more focused on the application's core functionality and less brittle.
-
-### Stage 3: Isolate Tests from the Flask Application Context
+### Idea 3: Isolate Tests from the Flask Application Context
 
 - **Objective:** Decouple tests from the Flask application context and HTTP requests.
 - **Action:** Refactor tests to focus on the logic within Flask routes, rather than testing through HTTP requests. This may involve restructuring some of the code in `app.py` to separate logic from request handling.
 - **Expected Outcome:** Tests should directly call and test the underlying logic without needing to simulate HTTP requests.
+
+### Idea 4: Isolate Tests from JSON Formatting
+
+- **Objective:** Ensure that tests focus on business logic and data handling, rather than the specifics of JSON response formatting.
+- **Action:** Mock file system operations (like reading from or writing to files) in your tests.
+- **Expected Outcome:** Tests validate the correctness of data processing or business logic, independent of data format. Tests become more focused on the application's core functionality and less brittle.
 
 ### Reflection and Next Steps
 
