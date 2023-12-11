@@ -38,6 +38,27 @@ export FLASK_ENV=development
 flask run
 ```
 
+#### Interacting with the Application Using `curl`
+
+Once the Flask app is running, you can interact with it using `curl` commands. Here are some examples:
+
+- **Add an Artist:**
+```
+curl -X POST http://localhost:5000/artist -d "name=Sótano Épico&genre=Metal"
+```
+- **Get Artist Information:**
+```
+curl http://localhost:5000/artist/1
+```
+- **Add an Album:**
+```
+curl -X POST http://localhost:5000/album -d "artist_id=1&title=Interstate Jungle Dynamite&release_year=2023"
+```
+- **Get Album Information:**
+```
+curl http://localhost:5000/album/1
+```
+
 ## Running the Tests
 
 ### Within PyCharm
