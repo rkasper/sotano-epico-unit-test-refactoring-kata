@@ -153,3 +153,7 @@ As you embark on this refactoring journey, here are some resources that might he
 - [Flask Documentation](https://flask.palletsprojects.com/en/2.0.x/)
 - [Python Unittest Documentation](https://docs.python.org/3/library/unittest.html)
 - [Mocking in Python with unittest](https://docs.python.org/3/library/unittest.mock.html)
+
+## Acknowledgements
+
+This Unit Test Refactoring Kata is inspired by the work of Emily Bache and her [Gilded Rose Refactoring Kata](https://github.com/emilybache/GildedRose-Refactoring-Kata). We extend our heartfelt gratitude to Emily for her contributions to the software development community and for inspiring educational exercises like this one.
